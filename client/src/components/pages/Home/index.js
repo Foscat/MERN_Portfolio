@@ -35,12 +35,12 @@ class Home extends Component{
 
     // When page loads see inital state value
     componentDidMount(){
-        console.log("Mount State: " , this.state);
+        // console.log("Mount State: " , this.state);
     }
 
     // Every time state changes this function fires to give you a update all changes and thier values
     componentDidUpdate(){
-        console.log("Updated State: ", this.state);
+        // console.log("Updated State: ", this.state);
     }
 
     // General handler for inputs thats value is to change the state

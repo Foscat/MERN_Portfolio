@@ -21,17 +21,17 @@ class ClientBlog extends Component {
 
 
     componentDidMount(){
-        console.log("ClientBlog mount state:", this.state);
+        // console.log("ClientBlog mount state:", this.state);
         this.getApproved()
     };
 
     componentDidUpdate(){
-        console.log("ClientBlog update state:", this.state);
+        // console.log("ClientBlog update state:", this.state);
     };
 
     getApproved = () => {
         API.getApprovedPosts().then(res => {
-            console.log("Appproved post res", res);
+            // console.log("Appproved post res", res);
             this.setState({ postPool: res.data });
         }).catch(err => {
             this.setState({ show: true, title: "Error", text: `You hit an error: ${err}`, trys: this.state.trys+1});

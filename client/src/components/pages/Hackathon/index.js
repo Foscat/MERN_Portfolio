@@ -23,11 +23,11 @@ class Hackathon extends Component {
     };
 
     componentDidMount(){
-        console.log("Hackathon mount state:", this.state);
+        // console.log("Hackathon mount state:", this.state);
     };
 
     componentDidUpdate(){
-        console.log("Hackathon update state:", this.state);
+        // console.log("Hackathon update state:", this.state);
     };
 
     flowChartModal = (chartArray) => {

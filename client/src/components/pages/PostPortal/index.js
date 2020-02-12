@@ -38,11 +38,11 @@ class PostPortal extends Component {
     };
 
     componentDidMount(){
-        console.log("PostPortal mount state:", this.state);
+        // console.log("PostPortal mount state:", this.state);
     };
 
     componentDidUpdate(){
-        console.log("PostPortal update state:", this.state);
+        // console.log("PostPortal update state:", this.state);
     };
 
     handleInputChange = event => {
@@ -74,13 +74,13 @@ class PostPortal extends Component {
 
     handleBlogSubmit = () => {
         let s = this.state;
-        console.log("submit blog:", s);
+        // console.log("submit blog:", s);
         API.addPost({
             title: s.blogTitle,
             body: s.blogContent,
             show: s.pubArt
         }).then(res => {
-            console.log("Add post response",res);
+            // console.log("Add post response",res);
         }).catch(err => console.error("Add post error", err));
     }
 
@@ -88,9 +88,9 @@ class PostPortal extends Component {
         let s = this.state;
         if(!s.editTitle || !s.editBody)this.setState({ title: "Error", text:"Fill out all fields", show: true });
         else{
-            console.log("update blog", id, s );
+            // console.log("update blog", id, s );
             API.updatePost(id, {title:s.editTitle, body:s.editBody, show:s.editShow }).then(res =>{
-                console.log("update post res", res);
+                // console.log("update post res", res);
                 this.setState({ show: false });
                 this.getApproved();
             }).catch(err => console.error("Update hit an error", err))
@@ -99,7 +99,7 @@ class PostPortal extends Component {
 
     deletePost = id => {
         API.deletePost(id, this.state.dbKeyInput).then(res => {
-            console.log("delete post res", res);
+            // console.log("delete post res", res);
             this.getApproved();
         }).catch(err => console.error("Delete hit an error", err))
     }
@@ -107,7 +107,7 @@ class PostPortal extends Component {
     getApproved = () => {
         this.setState({ conType: "posted"  });
         API.getApprovedPosts().then(res => {
-            console.log("Appproved post res", res);
+            // console.log("Appproved post res", res);
             this.setState({ postPool: res.data });
         }).catch(err => {
             this.setState({ show: true, title: "Error", text: `You hit an error: ${err}`});
@@ -118,7 +118,7 @@ class PostPortal extends Component {
     getDrafts = () => {
         this.setState({ conType: "drafts", show: false  });
             API.getDraftPosts(this.state.dbKeyInput).then(res => {
-                console.log("Daft post res", res);
+                // console.log("Daft post res", res);
                 this.setState({ postPool: res.data });
             }).catch(err => {
                 this.setState({ 
