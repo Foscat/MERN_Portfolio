@@ -43,7 +43,7 @@ class ProjectDisplay extends Component {
         if(this.state.hover) cursorStyle = {cursor: "url('./images/codeFlow_tran.png') 4 12, auto"};
 
         return(
-            <Card style={styles.card} className="col-12 mx-auto">
+            <Card style={styles.card} className="col-10 mx-auto">
                 <CardHeader style={{backgroundColor:"transparent", borderColor: CSS.colors.accent}}>
                     <CardTitle style={styles.title}>
                         {this.props.title} 
@@ -56,8 +56,8 @@ class ProjectDisplay extends Component {
 
                         <hr />
 
-                        <ul style={styles.li1}>
-                            <li>Tech used:</li>
+                        <ul style={styles.ul}>
+                            <li  style={styles.li1}>Tech used:</li>
                             {this.props.tech.length ? this.props.tech.map((tech,i) => {
                                 return <li style={styles.li2} key={i}>{tech}</li>
                             }) : null}
@@ -106,13 +106,17 @@ const styles = {
         boxShadow:CSS.shadows.div2,
         borderRadius: "7px",
         margin: "5px",
-        backgroundColor: CSS.colors.light
+        backgroundColor: CSS.colors.light,
+        maxWidth:"90vw"
     },
     cardBody: {
         display: "flex",
-        flex:1, flexDirection: "column",
+         flexDirection: "column",
         justifyContent: "center",
         fontSize: "1.2rem"
+    },
+    preview:{
+
     },
     title: {
         fontFamily: CSS.fonts.primary,
@@ -121,10 +125,18 @@ const styles = {
         textShadow: CSS.shadows.text2,
     },
     subtitle: {
-        fontFamily: CSS.fonts.secondary
+        fontFamily: CSS.fonts.secondary,
+        display: "flex",
+        flexWrap: "wrap",
+        wordWrap: "break-word",
+        width: "80%"
     },
     img:{
         maxWidth: "80vw",
+    },
+    ul:{
+        display:"flex",
+        flexWrap:"wrap"
     },
     li1:{
         listStyle:"none",
