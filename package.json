@@ -1,0 +1,40 @@
+{
+  "name": "kyle_foster-portfolio",
+  "version": "1.0.0",
+  "description": "react verson of portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Foscat/Kyle_Foster-Portfolio.git"
+  },
+  "author": "Foscat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Foscat/Kyle_Foster-Portfolio/issues"
+  },
+  "homepage": "https://github.com/Foscat/Kyle_Foster-Portfolio#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "moment": "^2.24.0",
+    "mongoose": "^5.8.11",
+    "nodemailer": "^6.4.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
