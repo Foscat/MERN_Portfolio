@@ -62,7 +62,7 @@ class Hackathon extends Component {
                             <TextCard
                                 style={{backgroundColor:CSS.colors.accent, justifyContent:"centera"}}
                                 titleStyle={{color: CSS.colors.light, textShadow: CSS.shadows.text1}}
-                                className="col-6 mx-auto"
+                                className="col mx-auto"
                                 title="Tech Assist"
                                 subtitle="Links to differant repos that hold phases ans pieces of the app">
                                    

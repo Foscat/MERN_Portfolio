@@ -34,17 +34,21 @@ export function BlogLink (){
 
 export function MedArtLink(){
     return(
-        <Button style={styles.btnStyle}>
-            <img src="./images/MediumArt.png" alt="medium article icon" />
-        </Button>
+        <a href="https://austinstartups.com/21-teams-gather-at-capital-factory-to-hack-daimler-north-americas-voice-technology-for-truck-77ed19862592">
+            <Button style={styles.btnStyle}>
+                <img src="./images/MediumArt.png" alt="medium article icon" />
+            </Button>
+        </a>
     )
 }
 
 export function TrilogyArtLink(){
     return(
-        <Button style={styles.btnStyle}>
-            <img src="./images/TrilogyArt.png" alt="medium article icon" />
-        </Button>
+        <a href="https://www.trilogyed.com/blog/a-friendship-yields-a-championship-two-smu-coding-boot-camp-students-win-major-hackathon/">
+            <Button style={styles.btnStyle}>
+                <img src="./images/TrilogyArt.png" alt="medium article icon" />
+            </Button>
+        </a>
     )
 }
 

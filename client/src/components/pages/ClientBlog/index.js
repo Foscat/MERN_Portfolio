@@ -59,7 +59,7 @@ class ClientBlog extends Component {
                     style={{backgroundColor: CSS.colors.light}}
                     className="col-11 mx-auto"
                     title="Welcome to my blog!"
-                    subtitle="This is where I post my thoughts on tech and buisness."/>
+                    subtitle="This is where I post my thoughts on tech and business."/>
                     {this.state.postPool.length ? this.state.postPool.map((post,i) => {
                         return(
                             <TextCard
