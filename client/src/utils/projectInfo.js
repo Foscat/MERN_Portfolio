@@ -16,11 +16,11 @@ const front = [
         ["./images/codeFlows/gifFreak/gifFreakCF.png", "./images/codeFlows/gifFreak/genBtn.png", "./images/codeFlows/gifFreak/genGif.png"], 
         "./images/previews/gifFreak.png"),
     new Project("Word Guess", "https://github.com/Foscat/Word-Guess-Game", "https://foscat.github.io/Word-Guess-Game/", 
-        "Vanilla javascript based game. Try and guess the correst letters to spell out the answer to the question.",
+        "Vanilla javascript based game. Try and guess the correct letters to spell out the answer to the question.",
         ["HTML", "CSS", "Javascript", "mp3 audio"], ["./images/codeFlows/htmlWord/genFlow.png", "./images/codeFlows/htmlWord/keyInput.png"], 
         "./images/previews/wordGuess.png"),
     new Project("Crystal Collector", "https://github.com/Foscat/unit-4-game", " https://foscat.github.io/unit-4-game/",
-        "Crysals get randomly assigned numbers and a target number is randomly generated. Clicking a crystal adds its value to tootal. Tyr to get total to match target score.",
+        "Crysals get randomly assigned numbers and a target number is randomly generated. Clicking a crystal adds its value to total. Tyr to get total to match target score.",
         ["HTML", "CSS", "Javascript", "jQuery"] ,["./images/codeFlows/crystal/general.png", "./images/codeFlows/crystal/click.png"],
         "./images/previews/crystalCollector.png")
 ];

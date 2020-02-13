@@ -64,7 +64,7 @@ class Hackathon extends Component {
                                 titleStyle={{color: CSS.colors.light, textShadow: CSS.shadows.text1}}
                                 className="col mx-auto"
                                 title="Tech Assist"
-                                subtitle="Links to differant repos that hold phases ans pieces of the app">
+                                subtitle="Links to different repos that hold phases ans pieces of the app">
                                    
                                    {/* <ul style={{listStyle:"none"}}>
                                        <li style={styles.li}> */}
