@@ -6,7 +6,7 @@ import ConForm from '../../parts/ConForm';
 import ResumeDL from "../../parts/ResumeDL";
 import { HackathonLink, HomeLink, BlogLink } from "../../parts/Links";
 import API from "../../../utils/API";
-import CSS from "../../../utils/CSS";
+import { colors, shadows} from "../../../utils/CSS";
 import HeaderText from '../../parts/HeaderText';
 
 class ReachOut extends Component {
@@ -84,7 +84,7 @@ class ReachOut extends Component {
                     title={<HeaderText>{this.state.title}</HeaderText>}
                     onConfirm={() => this.setState({ show: false })}
                     confirmBtnText="Close"
-                    confirmBtnStyle={{backgroundColor:CSS.colors.accent,color:CSS.colors.light}}
+                    confirmBtnStyle={{backgroundColor:colors.accent,color:colors.light}}
                     className="col-10 card mx-auto"
                 >
                     <div style={styles.sweetBox}>
@@ -99,7 +99,7 @@ class ReachOut extends Component {
 
                     {this.state.sent ? (
                             <TextCard
-                                style={{backgroundColor:CSS.colors.light}}
+                                style={{backgroundColor:colors.light}}
                                 className="col-10 mx-auto"
                                 title="Thanks for reaching out!"
                                 subtitle="Please take a copy of my resume if you don't already have one.">
@@ -123,7 +123,7 @@ class ReachOut extends Component {
                             </TextCard>
                         ): (
                             <TextCard
-                            style={{backgroundColor: CSS.colors.light}}
+                            style={{backgroundColor: colors.light}}
                             title="Reach out form"
                             className="col-10 mx-auto"
                             subtitle="Send me a message with your contact info.">
@@ -153,8 +153,8 @@ const styles = {
         overflow: "auto" 
     },
     header: {
-        color: CSS.colors.accent,
-        textShadow: CSS.shadows.text1
+        color: colors.accent,
+        textShadow: shadows.text1
     }
 };
 

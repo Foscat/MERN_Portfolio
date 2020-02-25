@@ -29,4 +29,4 @@ I can post bullitens and blogs.
 - React-scripts - Needed for react to work
 - Reactstrap - Special components made just for react
 
-See a working delpoyed version here: 
+See the working delpoyed version here: kylefoster-dev.com

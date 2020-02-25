@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'reactstrap';
 const front = ["HTML","CSS","Javascript", "jQuery", "React.js", "Bootstrap"];
 const back = ["Node.js", "Express.js", "MongoDB", "Mongoose","JsonWebToken", "Bcrypt"];
-const CSS = require("../../../utils/CSS");
+const { colors, fonts, shadows } = require("../../../utils/CSS");
 
 const SkillTable = props => {
     return(
@@ -47,19 +47,19 @@ const SkillTable = props => {
 const styles = {
     caption:{
         fontSize: "2.5em",
-        fontFamily: CSS.fonts.primary,
-        color: CSS.colors.darkGrey,
-        textShadow: CSS.shadows.text2
+        fontFamily: fonts.primary,
+        color: colors.darkGrey,
+        textShadow: shadows.text2
     },
     sub:{
         paddingLeft: "5%",
-        color: CSS.colors.darkGrey,
-        fontFamily: CSS.fonts.secondary,
-        borderColor: CSS.colors.darkGrey
+        color: colors.darkGrey,
+        fontFamily: fonts.secondary,
+        borderColor: colors.darkGrey
     },
     item: {
-        fontFamily: CSS.fonts.secondary,
-        color: CSS.colors.darkGrey
+        fontFamily: fonts.secondary,
+        color: colors.darkGrey
     }
 }
 

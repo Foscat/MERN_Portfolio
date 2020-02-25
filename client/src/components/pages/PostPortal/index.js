@@ -7,7 +7,7 @@ import BlogForm from '../../parts/BlogForm';
 import EditBlog from "../../parts/EditBlog";
 import API from "../../../utils/API";
 import DBKeyInput from '../../parts/DBKeyInput';
-import CSS from "../../../utils/CSS";
+import {colors, shadows} from "../../../utils/CSS";
 import HeaderText from '../../parts/HeaderText';
 
 class PostPortal extends Component {
@@ -213,17 +213,17 @@ const styles = {
         overflow: "auto" 
     },
     closeBtn: {
-        backgroundColor: CSS.colors.accent,
-        color: CSS.colors.light,
-        boxShadow: CSS.shadows.div1,
+        backgroundColor: colors.accent,
+        color: colors.light,
+        boxShadow: shadows.div1,
         fontWeight: 600,
         margin: "10px",
         border: "none"
     },
     showBtn: {
         margin:"5px",
-        backgroundColor:CSS.colors.accent,
-        color: CSS.colors.black,
+        backgroundColor:colors.accent,
+        color: colors.black,
         fontWeight: 600
     },
     btnCard: {
@@ -233,7 +233,7 @@ const styles = {
         flexDirection: "row", 
         justifyContent: "space-around", 
         padding: "2rem",
-        backgroundColor: CSS.colors.light
+        backgroundColor: colors.light
     }
 };
 

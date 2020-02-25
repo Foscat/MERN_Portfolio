@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import CSS from "../../../utils/CSS";
+import { shadows } from "../../../utils/CSS";
 
 const ResumeDL = props => {
     return(
@@ -8,7 +8,7 @@ const ResumeDL = props => {
 
             <div className="col-6">
                 <a href="./downloads/Kyle_Foser_Résumé.pdf" download="Kyle_Foser_Résumé.pdf">
-                    <Button style={{boxShadow: CSS.shadows.div2}} >
+                    <Button style={{boxShadow: shadows.div2}} >
                         <img src="./images/PDF_DL.png" alt="download pdf" />
                     </Button>
                 </a>
@@ -16,7 +16,7 @@ const ResumeDL = props => {
 
             <div className="col-6">
                 <a href="./downloads/Kyle_Foser_Résumé.docx" download="Kyle_Foser_Résumé.docx">
-                    <Button style={{boxShadow: CSS.shadows.div2}} >
+                    <Button style={{boxShadow: shadows.div2}} >
                         <img src="./images/Word_DL.png" alt="download pdf" />
                     </Button>
                 </a>

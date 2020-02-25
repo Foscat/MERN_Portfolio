@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardHeader, CardTitle, CardSubtitle } from 'reactstrap';
-const CSS = require("../../../utils/CSS");
+import { colors, fonts, shadows } from "../../../utils/CSS";
 
 // General use card for wrapping around other components and give clean presentaiton
 // Takes is style props to give ease of css 
@@ -35,15 +35,15 @@ const TextCard = (props) => {
 
 const styles = {
     title: {
-        fontFamily: CSS.fonts.primary,
-        color: CSS.colors.darkGrey,
-        textShadow: CSS.shadows.text2,
+        fontFamily: fonts.primary,
+        color: colors.darkGrey,
+        textShadow: shadows.text2,
         // fontWeight: 800,
         fontSize: "2rem"
     },
     subtitle: {
-        fontFamily: CSS.fonts.secondary,
-        color: CSS.colors.darkGrey,
+        fontFamily: fonts.secondary,
+        color: colors.darkGrey,
         fontWeight: 600,
         fontSize: "1.2rem"
     }

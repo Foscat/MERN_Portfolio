@@ -6,8 +6,7 @@ import ImgSlider from "../../parts/ImgSlider";
 import HeaderText from '../../parts/HeaderText';
 import TextCard from '../../parts/TextCard';
 import { MedArtLink, TrilogyArtLink } from '../../parts/Links';
-
-const CSS = require("../../../utils/CSS");
+import { colors, fonts, shadows } from "../../../utils/CSS";
 
 class Hackathon extends Component {
     
@@ -41,7 +40,7 @@ class Hackathon extends Component {
                 <SweetAlert
                     show={this.state.show}
                     title={<HeaderText>{this.state.title}</HeaderText>}
-                    confirmBtnStyle={{backgroundColor:CSS.colors.accent,color:CSS.colors.light}}
+                    confirmBtnStyle={{backgroundColor:colors.accent,color:colors.light}}
                     confirmBtnText="Close"
                     onConfirm={() => this.setState({ show: false })}
                     className="col-9 card mx-auto"
@@ -60,8 +59,8 @@ class Hackathon extends Component {
                         subtitle="5 first year devs + 1 deisel tech + 1 documents expert + 1 lawyer...
                         Took on 20 other teams filled of senior devs, and came out on top.">
                             <TextCard
-                                style={{backgroundColor:CSS.colors.accent, justifyContent:"centera"}}
-                                titleStyle={{color: CSS.colors.light, textShadow: CSS.shadows.text1}}
+                                style={{backgroundColor:colors.accent, justifyContent:"centera"}}
+                                titleStyle={{color: colors.light, textShadow: shadows.text1}}
                                 className="col mx-auto"
                                 title="Tech Assist"
                                 subtitle="Links to different repos that hold phases ans pieces of the app">
@@ -91,7 +90,7 @@ class Hackathon extends Component {
                                    </ul> */}
 
                                    <TextCard
-                                   style={{backgroundColor: CSS.colors.light}}
+                                   style={{backgroundColor: colors.light}}
                                     className="mx-auto mt-2"
                                     title="Articles written about event"
                                     >
@@ -118,7 +117,7 @@ class Hackathon extends Component {
                     </Col> */}
 
                     <Card 
-                        style={{border: "none", backgroundColor: CSS.colors.lightGrey, marginBottom: "20px"}}
+                        style={{border: "none", backgroundColor: colors.lightGrey, marginBottom: "20px"}}
                         className="mx-auto col-md-8">
                         <img className="card-img m-1" alt="collaboration" src="./images/chatBotting.jpg" />
 
@@ -148,22 +147,22 @@ const styles = {
         paddingTop: "5rem"
     },
     flexTron: {
-        backgroundColor: CSS.colors.light,
-        color: CSS.colors.darkGrey
+        backgroundColor: colors.light,
+        color: colors.darkGrey
     },
     flexSub: {
-        fontFamily: CSS.fonts.primary,
-        color: CSS.colors.darkGrey,
-        textShadow: CSS.shadows.text1
+        fontFamily: fonts.primary,
+        color: colors.darkGrey,
+        textShadow: shadows.text1
     },
     li: {
         display: "inline",
         margin: "5px"
     },
     btn: {
-        backgroundColor: CSS.colors.accent,
-        color: CSS.colors.light,
-        boxShadow: CSS.shadows.div1,
+        backgroundColor: colors.accent,
+        color: colors.light,
+        boxShadow: shadows.div1,
         fontWeight: 600,
         margin: "10px",
         border: "none"

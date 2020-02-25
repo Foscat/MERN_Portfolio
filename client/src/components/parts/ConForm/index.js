@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import CSS from "../../../utils/CSS";
+import { colors, fonts, shadows } from "../../../utils/CSS";
 
 const ConForm = props => {
     return(
@@ -32,24 +32,24 @@ const ConForm = props => {
 
 const styles = {
     form: {
-        fontFamily: CSS.fonts.secondary
+        fontFamily: fonts.secondary
     },
     btn: {
         marginTop: "5px",
-        fontFamily: CSS.fonts.primary,
-        backgroundColor: CSS.colors.accent,
-        color: CSS.colors.light,
-        boxShadow: CSS.shadows.div3
+        fontFamily: fonts.primary,
+        backgroundColor: colors.accent,
+        color: colors.light,
+        boxShadow: shadows.div3
     },
     label: {
-        color: CSS.colors.darkGrey,
+        color: colors.darkGrey,
         fontWeight: 600
     },
     input: {
-        // backgroundColor: CSS.colors.accent,
-        color: CSS.colors.darkGrey,
-        borderColor: CSS.colors.light,
-        boxShadow: CSS.shadows.div2
+        // backgroundColor: colors.accent,
+        color: colors.darkGrey,
+        borderColor: colors.light,
+        boxShadow: shadows.div2
     }
 }
 

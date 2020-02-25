@@ -1,6 +1,6 @@
 import React from 'react';
 import { Jumbotron } from "reactstrap";
-import CSS from "../../../utils/CSS";
+import { colors, shadows, fonts} from "../../../utils/CSS";
 
 // Simple jumborton that can take in prop styles and has classNames for easy css
 
@@ -22,14 +22,14 @@ const FlexTron = (props) => {
 const styles = {
     title:{
         fontSize: "2.5em",
-        fontFamily: CSS.fonts.primary,
-        color: CSS.colors.darkGrey,
-        textShadow: CSS.shadows.text2
+        fontFamily: fonts.primary,
+        color: colors.darkGrey,
+        textShadow: shadows.text2
     },
     sub: {
-        color: CSS.colors.darkGrey,
-        fontFamily: CSS.fonts.secondary,
-        borderColor: CSS.colors.darkGrey
+        color: colors.darkGrey,
+        fontFamily: fonts.secondary,
+        borderColor: colors.darkGrey
     }
 };
 

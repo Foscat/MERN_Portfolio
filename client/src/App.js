@@ -7,12 +7,12 @@ import NavBar from "./components/parts/NavBar";
 import Hackathon from './components/pages/Hackathon';
 import ClientBlog from './components/pages/ClientBlog';
 import PostPortal from './components/pages/PostPortal';
-const CSS = require("./utils/CSS");
+import {colors} from "./utils/CSS";
 // This is the router for react page components
 class App extends Component {
     render() {
         return (
-            <div style={{backgroundColor: CSS.colors.lightGrey, minHeight: "100vh", height: "100%"}} >
+            <div style={{backgroundColor: colors.lightGrey, minHeight: "100vh", height: "100%"}} >
                 {/* Allows navbar to stay on all pages */}
                 <NavBar />
                 <Router>

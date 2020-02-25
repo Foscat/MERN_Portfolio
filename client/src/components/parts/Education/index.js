@@ -1,5 +1,5 @@
 import React from 'react';
-import CSS from "../../../utils/CSS";
+import { colors, fonts, shadows } from "../../../utils/CSS";
 import { Button } from 'reactstrap';
 
 const Education = props => {
@@ -38,16 +38,16 @@ const styles = {
     row:{
         justifyContent:"space-around",
         margin: "auto auto",
-        fontFamily: CSS.fonts.secondary,
+        fontFamily: fonts.secondary,
         fontSize: "1.5rem",
-        color: CSS.colors.darkGrey
+        color: colors.darkGrey
     },
     btn: {
         border: "none",
         margin: "10px",
-        color: CSS.colors.light,
-        boxShadow: CSS.shadows.div3,
-        backgroundColor: CSS.colors.accent
+        color: colors.light,
+        boxShadow: shadows.div3,
+        backgroundColor: colors.accent
     }
 }
 

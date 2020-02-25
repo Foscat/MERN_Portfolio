@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardHeader, CardTitle, CardSubtitle, CardImg, Col, Popover, PopoverHeader } from 'reactstrap';
-const CSS = require("../../../utils/CSS");
+import { colors, shadows, fonts } from "../../../utils/CSS"
 
 class ProjectDisplay extends Component {
 
@@ -44,7 +44,7 @@ class ProjectDisplay extends Component {
 
         return(
             <Card style={styles.card} className="col-10 mx-auto">
-                <CardHeader style={{backgroundColor:"transparent", borderColor: CSS.colors.accent}}>
+                <CardHeader style={{backgroundColor:"transparent", borderColor: colors.accent}}>
                     <CardTitle style={styles.title}>
                         {this.props.title} 
                     </CardTitle>
@@ -58,9 +58,11 @@ class ProjectDisplay extends Component {
 
                         <ul style={styles.ul}>
                             <li  style={styles.li1}>Tech used:</li>
-                            {this.props.tech.length ? this.props.tech.map((tech,i) => {
-                                return <li style={styles.li2} key={i}>{tech}</li>
-                            }) : null}
+                            <div style={{marginTop:10}}>
+                                {this.props.tech.length ? this.props.tech.map((tech,i) => {
+                                    return <li style={styles.li2} key={i}>{tech}</li>
+                                }) : null}
+                            </div>
                         </ul>
                     </CardSubtitle>
                     <hr />
@@ -103,10 +105,10 @@ class ProjectDisplay extends Component {
 
 const styles = {
     card: {
-        boxShadow:CSS.shadows.div2,
+        boxShadow:shadows.div2,
         borderRadius: "7px",
         margin: "5px",
-        backgroundColor: CSS.colors.light,
+        backgroundColor: colors.light,
         maxWidth:"90vw"
     },
     cardBody: {
@@ -119,13 +121,13 @@ const styles = {
 
     },
     title: {
-        fontFamily: CSS.fonts.primary,
+        fontFamily: fonts.primary,
         fontSize: "2.5rem",
-        color: CSS.colors.darkGrey,
-        textShadow: CSS.shadows.text2,
+        color: colors.darkGrey,
+        textShadow: shadows.text2,
     },
     subtitle: {
-        fontFamily: CSS.fonts.secondary,
+        fontFamily: fonts.secondary,
         display: "flex",
         flexWrap: "wrap",
         wordWrap: "break-word",
@@ -142,13 +144,13 @@ const styles = {
         listStyle:"none",
         marginTop: "10px",
         fontWeight:600,
-        fontFamily:CSS.fonts.primary
+        fontFamily:fonts.primary
     },
     li2:{
         display:"inline",
         margin:"0 10px",
         fontWeight:500,
-        fontFamily:CSS.fonts.secondary
+        fontFamily:fonts.secondary
     }
 };
 

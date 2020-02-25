@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import CSS from "../../../utils/CSS";
+import { colors, shadows} from "../../../utils/CSS";
 
 export function HomeLink() {
     return(
@@ -55,8 +55,8 @@ export function TrilogyArtLink(){
 
 const styles = {
     btnStyle:{
-        boxShadow: CSS.shadows.div2,
-        backgroundColor: CSS.colors.accent,
+        boxShadow: shadows.div2,
+        backgroundColor: colors.accent,
         border: "none"
     }
 }

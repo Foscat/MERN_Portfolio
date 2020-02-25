@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-const CSS = require("../../../utils/CSS");
+const {colors, shadows} = require("../../../utils/CSS");
 
 class ImgSlider extends Component {
     
@@ -47,9 +47,9 @@ const styles = {
     button: {
         margin: "10px",
         border: "none",
-        color: CSS.colors.light,
-        boxShadow: CSS.shadows.div3,
-        backgroundColor: CSS.colors.accent
+        color: colors.light,
+        boxShadow: shadows.div3,
+        backgroundColor: colors.accent
     },
     image: {
         height:"100%",

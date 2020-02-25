@@ -4,7 +4,7 @@ import SweetAlert from 'react-bootstrap-sweetalert';
 import TextCard from '../../parts/TextCard';
 import API from "../../../utils/API";
 import FlexTron from "../../parts/FlexTron";
-import CSS from "../../../utils/CSS";
+import {  colors  } from "../../../utils/CSS";
 
 class ClientBlog extends Component {
     
@@ -46,7 +46,7 @@ class ClientBlog extends Component {
                     title={this.state.title}
                     onConfirm={() => this.setState({ show: false })}
                     confirmBtnText="Close"
-                    confirmBtnStyle={{backgroundColor:CSS.colors.accent,color:CSS.colors.light}}
+                    confirmBtnStyle={{backgroundColor:colors.accent,color:colors.light}}
                     className="col-10 card mx-auto"
                 >
                     <div style={styles.sweetBox}>
@@ -56,14 +56,14 @@ class ClientBlog extends Component {
 
                 <Row>
                 <FlexTron
-                    style={{backgroundColor: CSS.colors.light}}
+                    style={{backgroundColor: colors.light}}
                     className="col-11 mx-auto"
                     title="Welcome to my blog!"
                     subtitle="This is where I post my thoughts on tech and business."/>
                     {this.state.postPool.length ? this.state.postPool.map((post,i) => {
                         return(
                             <TextCard
-                                style={{backgroundColor: CSS.colors.light}}
+                                style={{backgroundColor: colors.light}}
                                 className="col-8 mx-auto"
                                 key={i}
                                 subtitle={post.title}>

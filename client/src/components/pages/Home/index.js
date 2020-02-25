@@ -11,8 +11,7 @@ import Education from '../../parts/Education';
 import ResumeDL from '../../parts/ResumeDL';
 import ResumeView from '../../parts/ResumeView';
 import HeaderText from "../../parts/HeaderText";
-
-const CSS = require("../../../utils/CSS");
+import { colors, shadows, fonts } from "../../../utils/CSS";
 const projects = require("../../../utils/projectInfo");
 
 class Home extends Component{
@@ -85,7 +84,7 @@ class Home extends Component{
                     confirmBtnText="Close"
                     confirmBtnStyle={styles.closeBtn}
                     className="col-10 card mx-auto"
-                    style={{backgroundColor: CSS.colors.light, justifyContent: "center"}}
+                    style={{backgroundColor: colors.light, justifyContent: "center"}}
                 >
                     <div style={styles.sweetBox}>
                         {this.state.text}
@@ -177,7 +176,7 @@ const styles = {
         margin: "10px"
     },
     portImg: {
-        boxShadow:CSS.shadows.div2,
+        boxShadow:shadows.div2,
         borderRadius: "7px"
     },
     row:{
@@ -187,30 +186,30 @@ const styles = {
     },
     skillForm: {
         justifyContent: "space-around",
-        backgroundColor: CSS.colors.light,
+        backgroundColor: colors.light,
         padding: "10px",
         borderRadius: "7px",
-        boxShadow:CSS.shadows.div2
+        boxShadow:shadows.div2
     },
     proCard:{
         margin: "0 10% 30px",
         borderRadius: "7px",
-        backgroundColor: CSS.colors.light,
+        backgroundColor: colors.light,
         border: "none",
-        boxShadow:CSS.shadows.div2
+        boxShadow:shadows.div2
     },
     closeBtn: {
-        backgroundColor: CSS.colors.accent,
-        color: CSS.colors.light,
-        boxShadow: CSS.shadows.div3,
+        backgroundColor: colors.accent,
+        color: colors.light,
+        boxShadow: shadows.div3,
         margin: "10px",
         border: "none"
     },
     header: {
         fontSize: "2.5em",
-        fontFamily: CSS.fonts.primary,
-        color: CSS.colors.darkGrey,
-        textShadow: CSS.shadows.text2
+        fontFamily: fonts.primary,
+        color: colors.darkGrey,
+        textShadow: shadows.text2
     }
 }
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
-const CSS = require("../../../utils/CSS");
+import { fonts } from "../../../utils/CSS";
 
 const  ProjectSelect = props => {
     return(
-        <Form className={props.className} style={{fontFamily:CSS.fonts.secondary, fontSize: "1.1em"}}>
+        <Form className={props.className} style={{fontFamily:fonts.secondary, fontSize: "1.1em"}}>
             <FormGroup tag="fieldset">
                 <FormGroup check>
                     <Label check>

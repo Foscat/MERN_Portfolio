@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-
-const CSS = require("../../../utils/CSS");
+import { fonts, colors } from "../../../utils/CSS";
 
 
 class NavBar extends Component {
@@ -44,16 +43,16 @@ class NavBar extends Component {
 
 const styles = {
     body: {
-        backgroundColor: CSS.colors.darkGrey
+        backgroundColor: colors.darkGrey
     },
     link: {
-        color: CSS.colors.light,
-        fontFamily: CSS.fonts.secondary
+        color: colors.light,
+        fontFamily: fonts.secondary
     },
     brand: {
-        color: CSS.colors.light,
+        color: colors.light,
         fontWeight: "bold",
-        fontFamily: CSS.fonts.primary
+        fontFamily: fonts.primary
     },
     margin: {
         position: "fixed",
