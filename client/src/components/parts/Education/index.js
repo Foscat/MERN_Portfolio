@@ -1,8 +1,10 @@
 import React from 'react';
+import { useState, useEffect, useRef } from "react";
 import { colors, fonts, shadows } from "../../../utils/CSS";
 import { Button } from 'reactstrap';
 
 const Education = props => {
+
     return(
         <div style={styles.row} className="row mb-3">
             <div  className="col-4 mt-2">
@@ -19,7 +21,7 @@ const Education = props => {
             <div className="col-4 mt-2">
                 <h5 className="text-center">TTS</h5>
                 <a href="https://www.techtalentsouth.com/">
-                    <img className="card-img" src="./images/tts.png" alt="TTS" />
+                    <img  className="card-img" src="./images/tts.png" alt="TTS" />
                 </a>
                 <p className="text-center">
                     <em>Java Spring 2019</em>

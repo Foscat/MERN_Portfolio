@@ -3,8 +3,9 @@ const nodemailer = require("nodemailer");
 module.exports = {
     reachoutNotification: async function(req,res){
         console.log("Reachout notification body:", req.body);
+        let { reachoutInfo } = req.body;
         try {
-            if(req.body.reachoutInfo){
+            if(reachoutInfo){
                 
                 let transporter = nodemailer.createTransport({
                     host:"smtp-mail.outlook.com",
@@ -21,12 +22,12 @@ module.exports = {
                 });
                 
                 let message = {
-                    from: `Portfolio Website <${process.env.EMAIL_ADDRESS}>`,
+                    from: ` <${process.env.EMAIL_ADDRESS}>`,
                     to: `Kyle Foster <${process.env.EMAIL_ADDRESS}>`,
                     subject: "Someone reached out to you!",
-                    text: `Reachout content: ${req.body.reachoutInfo.content}
-                        Contact Info: ${req.body.reachoutInfo.contactInfo} 
-                        Name: ${req.body.reachoutInfo.name}`,
+                    text: `Reachout content: ${reachoutInfo.content}
+                        Contact Info: ${reachoutInfo.contactInfo} 
+                        Name: ${reachoutInfo.name}`,
                     html: `
                     <!DOCTYPE html>
                     <html lang="en">
@@ -81,11 +82,11 @@ module.exports = {
                                     <div class="col">
                                         <h4>What they had to say</h4>
                                         <ul>
-                                            <li>Name:  ${req.body.reachoutInfo.name}</li>
+                                            <li>Name:  ${reachoutInfo.name}</li>
                                             <hr>
-                                            <li>Contact Info: ${req.body.reachoutInfo.contactInfo}</li>
+                                            <li>Contact Info: ${reachoutInfo.contactInfo}</li>
                                             <hr>
-                                            <li>Review Content: ${req.body.reachoutInfo.content}</li>
+                                            <li>Review Content: ${reachoutInfo.content}</li>
                                         </ul>
                                     </div>
                                 </div>
