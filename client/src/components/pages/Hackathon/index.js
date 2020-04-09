@@ -54,67 +54,53 @@ class Hackathon extends Component {
                     <FlexTron
                         style={styles.flexTron}
                         subStyle={styles.flexSub}
-                        className="col-11 mx-auto"
+                        className="col-10 mx-auto"
                         title="2019 Daimler Hackathon"
                         subtitle="5 first year devs + 1 deisel tech + 1 documents expert + 1 lawyer...
                         Took on 20 other teams filled of senior devs, and came out on top.">
                             <TextCard
-                                style={{backgroundColor:colors.accent, justifyContent:"centera"}}
+                                style={{backgroundColor:colors.accent, justifyContent:"space-around"}}
                                 titleStyle={{color: colors.light, textShadow: shadows.text1}}
                                 className="col mx-auto"
                                 title="Tech Assist"
                                 subtitle="Links to different repos that hold phases ans pieces of the app">
                                    
-                                   {/* <ul style={{listStyle:"none"}}>
-                                       <li style={styles.li}> */}
-                                           <a href="https://github.com/anirudh-goyal/daimlerHackathon2019">
+                                           <a href="https://github.com/anirudh-goyal/daimlerHackathon2019"
+                                            target="_blank" rel="noopener noreferrer">
                                                <Button style={styles.btn}>
                                                    Original Hackathon Version
                                                </Button>
                                            </a>
-                                       {/* </li>
-                                       <li style={styles.li}> */}
-                                           <a href="https://github.com/Foscat/TechAssist_Public">
+
+                                           <a href="https://github.com/Foscat/TechAssist_Public"
+                                            target="_blank" rel="noopener noreferrer">
                                                <Button style={styles.btn}>
                                                    Final React Native Front End
                                                </Button>
                                            </a>
-                                       {/* </li>
-                                       <li style={styles.li}> */}
-                                           <a href="https://github.com/Foscat/XML_Sorter_Microservice">
+                                           <a href="https://github.com/Foscat/XML_Sorter_Microservice"
+                                            target="_blank" rel="noopener noreferrer">
                                                <Button style={styles.btn}>
                                                    XML Parser Service
                                                </Button>
                                            </a>
-                                       {/* </li>
-                                   </ul> */}
 
                                    <TextCard
-                                   style={{backgroundColor: colors.light}}
+                                    style={{backgroundColor: colors.light}}
                                     className="mx-auto mt-2"
                                     title="Articles written about event"
                                     >
-                                    <Row className="mx-auto">
-                                        <Col sm="6">
+                                    <Row style={{justifyContent:"space-around"}}>
+                                        <Col sm="2">
                                             <MedArtLink />
                                         </Col>
-                                        <Col sm="6">
+                                        <Col sm="2">
                                             <TrilogyArtLink />
                                         </Col>
                                     </Row>
                                    </TextCard>
                             </TextCard>
                         </FlexTron>
-
-                    {/* <Col sm="9" className="mx-auto">
-                        <iframe 
-                            className="rounded"
-                            height="600px"
-                            width="100%" 
-                            title="Austin Startups Article"
-                            src="https://austinstartups.com/21-teams-gather-at-capital-factory-to-hack-daimler-north-americas-voice-technology-for-truck-77ed19862592" 
-                        />
-                    </Col> */}
 
                     <Card 
                         style={{border: "none", backgroundColor: colors.lightGrey, marginBottom: "20px"}}
@@ -126,16 +112,6 @@ class Hackathon extends Component {
                         <img className="card-img m-1" alt="big check" src="./images/bigCheck.jpg" />
                     </Card>
 
-                    {/* <Col sm="9" className="mx-auto">
-                        <iframe 
-                            className="rounded"
-                            height="600px"
-                            width="100%"
-                            title="Trilogy Ed Article"
-                            src="https://www.trilogyed.com/blog/a-friendship-yields-a-championship-two-smu-coding-boot-camp-students-win-major-hackathon/"
-                        />
-                    </Col>
-    */}
                 </Row>
             </div>
         );

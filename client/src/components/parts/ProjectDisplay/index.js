@@ -14,20 +14,12 @@ class ProjectDisplay extends Component {
         }
     };
 
-    toggleHover = () => {
-        this.setState({ hover: !this.state.hover });
-    }
-    
     toggleDpHover = () => {
         this.setState({ depHov: !this.state.depHov });
     }
 
     toggleGitHover = () => {
         this.setState({ gitHov: !this.state.gitHov });
-    }
-
-    checkHover = () => {
-        if(!this.state.hover)this.setState({ hover: true });
     }
 
     checkDpHover = () => {
@@ -39,8 +31,6 @@ class ProjectDisplay extends Component {
     }
 
     render(){
-        let cursorStyle;
-        if(this.state.hover) cursorStyle = {cursor: "url('./images/codeFlow_tran.png') 4 12, auto"};
 
         return(
             <Card style={styles.card} className="col-10 mx-auto">
@@ -57,24 +47,22 @@ class ProjectDisplay extends Component {
                         <hr />
 
                         <ul style={styles.ul}>
-                            <li  style={styles.li1}>Tech used:</li>
-                            <div style={{marginTop:10}}>
-                                {this.props.tech.length ? this.props.tech.map((tech,i) => {
-                                    return <li style={styles.li2} key={i}>{tech}</li>
-                                }) : null}
-                            </div>
+                            <li className="mt-1"  style={styles.li1}>Tech used:</li>
+                            {this.props.tech.length ? this.props.tech.map((tech,i) => {
+                                return <li className="mt-1" style={styles.li2} key={i}>{tech}</li>
+                            }) : null}
                         </ul>
+
                     </CardSubtitle>
                     <hr />
-                    <CardImg onMouseEnter={this.toggleHover} onMouseOver={()=> this.checkHover()} onMouseLeave={this.toggleHover}
-                     onClick={()=>this.props.flowModal(this.props.flowCharts)} 
-                        style={{...styles.preview, ...cursorStyle}} src={this.props.img} alt="codeflow" />
+                    <CardImg style={styles.preview} src={this.props.img} alt="Website screenshot" />
 
                 </CardBody>
 
                 <CardHeader className="row" style={{justifyContent: "space-around"}}>
-                    <Col sm="3">
-                        <a id={`repoLink${this.props.index}`} href={this.props.repo} onMouseEnter={this.toggleGitHover} 
+                    <Col sm="1">
+                        <a target="_blank" rel="noopener noreferrer"
+                            id={`repoLink${this.props.index}`} href={this.props.repo} onMouseEnter={this.toggleGitHover} 
                              onMouseOver={()=> this.checkGitHover()} onMouseLeave={this.toggleGitHover}>
                             <img src="./images/Repo.png" alt="link to repo" />
                         </a>
@@ -82,10 +70,11 @@ class ProjectDisplay extends Component {
                             <PopoverHeader>Link to Github repository</PopoverHeader>
                         </Popover>
                     </Col>
-                    <Col sm="3">
+                    <Col sm="1">
                         {this.props.deployed ? (
                             <div>
-                                <a id={`deployedLink${this.props.index}`} href={this.props.deployed} onMouseEnter={this.toggleDpHover} 
+                                <a target="_blank" rel="noopener noreferrer"
+                                id={`deployedLink${this.props.index}`} href={this.props.deployed} onMouseEnter={this.toggleDpHover} 
                                 onMouseOver={()=> this.checkDpHover()} onMouseLeave={this.toggleDpHover}>
                                     <img src="./images/Deployed.png" alt="link to deployed version" />
                                 </a>
@@ -117,9 +106,6 @@ const styles = {
         justifyContent: "center",
         fontSize: "1.2rem"
     },
-    preview:{
-
-    },
     title: {
         fontFamily: fonts.primary,
         fontSize: "2.5rem",
@@ -142,7 +128,6 @@ const styles = {
     },
     li1:{
         listStyle:"none",
-        marginTop: "10px",
         fontWeight:600,
         fontFamily:fonts.primary
     },

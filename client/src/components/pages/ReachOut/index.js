@@ -123,7 +123,7 @@ class ReachOut extends Component {
                             </TextCard>
                         ): (
                             <TextCard
-                            style={{backgroundColor: colors.light}}
+                            style={{backgroundColor: colors.light,maxWidth:"900px"}}
                             title="Reach out form"
                             className="col-10 mx-auto"
                             subtitle="Send me a message with your contact info.">

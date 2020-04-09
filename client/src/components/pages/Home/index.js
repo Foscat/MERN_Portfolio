@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Button } from 'reactstrap';
-// import API from '../../../utils/API';
+// import { Link, animateScroll as scroll } from "react-scroll";
+import Scroll from "react-scroll"
 import SweetAlert from 'react-bootstrap-sweetalert';
 import TextCard from '../../parts/TextCard';
 import SkillTable from '../../parts/SkillTable';
@@ -12,7 +13,9 @@ import ResumeDL from '../../parts/ResumeDL';
 import ResumeView from '../../parts/ResumeView';
 import HeaderText from "../../parts/HeaderText";
 import { colors, shadows, fonts } from "../../../utils/CSS";
-const projects = require("../../../utils/projectInfo");
+const Element = Scroll.Element;
+const scroller = Scroll.scroller;
+const { projects } = require("../../../utils/projectInfo");
 
 class Home extends Component{
     constructor(props){
@@ -27,8 +30,7 @@ class Home extends Component{
             text: null,
 
             resume: false,
-            projectsShown: []
-
+            projectsShown: [],
         }
     }
 
@@ -51,9 +53,19 @@ class Home extends Component{
         });
     }
 
-    handleRadioSelect = type => {
+    scrollToTop = type => {
         // console.log("Radio value", type)
-        this.setState({ projectsShown: projects[type] });
+        scroller.scrollTo("top",{ duration: 1200,
+            delay: 100,
+            smooth: true});
+    }
+
+    handleRadioSelect = index => {
+        // console.log("Radio value", type)
+        this.setState({ projectsShown: [projects[index]] });
+        scroller.scrollTo("projects",{ duration: 1200,
+            delay: 100,
+            smooth: true});
     }
 
     flowChartModal = (chartArray) => {
@@ -74,7 +86,7 @@ class Home extends Component{
     render() {
         
         return (
-            <div className="row" style={styles.page}>
+            <div id="homePage" className="row" style={styles.page}>
 
                 {/* Generic model waiting for function to show and fill it */}
                 <SweetAlert
@@ -90,70 +102,75 @@ class Home extends Component{
                         {this.state.text}
                     </div>
                 </SweetAlert>
+                
+                <Element name="top">
+                    <Row style={styles.row}>
+                            <Col style={styles.portCol} sm="3">
+                                <img style={styles.portImg} className="card-img" src="./images/linkedInPic.jpg" alt="profilePic" />
 
-               <Row style={styles.row}>
-                    <Col style={styles.portCol} sm="3">
-                        <img style={styles.portImg} className="card-img" src="./images/linkedInPic.jpg" alt="profilePic" />
+                                <div style={{justifyContent: "space-around", marginTop: "8px"}} className="row">
+                                    <div className="col-4">
+                                        <a href="https://github.com/Foscat">
+                                            <img alt="github icon" src="./images/GitHub-Mark-32px.png" />
+                                        </a>
+                                    </div>
+                                    <div className="col-4">
+                                        <a href="https://www.linkedin.com/in/kylefoster-dev/">
+                                            <img alt="linked-in icon" src="./images/In-Black-34px-TM.png" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Education className="col-3 mb-2" showResumes={this.showDownloads} showDLoptions={this.showDLoptions}/>
+                            <Col sm="4">
+                                <SkillTable style={styles.skillForm} />
+                            </Col>
 
-                        <div style={{justifyContent: "space-around", marginTop: "8px"}} className="row">
-                            <div className="col-4">
-                                <a href="https://github.com/Foscat">
-                                    <img alt="github icon" src="./images/GitHub-Mark-32px.png" />
-                                </a>
-                            </div>
-                            <div className="col-4">
-                                <a href="https://www.linkedin.com/in/kylefoster-dev/">
-                                    <img alt="linked-in icon" src="./images/In-Black-34px-TM.png" />
-                                </a>
-                            </div>
+                            <TextCard
+                                style={styles.proCard}
+                                titleStyle={{fontSize: "2.5em"}}
+                                className="col-md-4 mx-auto"
+                                title="Projects"
+                                subtitle="Choose a project you wish to see details on.">
+                                    <ProjectSelect  handleRadioSelect={this.handleRadioSelect}/>
+                            </TextCard>
+                    </Row>
+                </Element>
+
+                <Row  className="mt-3" style={styles.row}>
+                    {this.state.projectsShown.length ? (
+                        <Button style={styles.toTop} onClick={()=>this.scrollToTop()}>Back to top</Button>
+                    ) : null}
+                    <Element name="projects">
+                        <div className="mx-auto">
+                            {this.state.projectsShown.length ? (
+                                <Button style={styles.closeBtn} onClick={() => this.setState({ projectsShown: [] })}>
+                                    Close Project
+                                </Button>
+                            ): null}
+
+                            
+                            
+                            {this.state.projectsShown.length ? (this.state.projectsShown.map((project,i) =>{
+                                return(
+                                    <ProjectDisplay
+                                    key={i}
+                                    title={project.name}
+                                    subtitle={project.description}
+                                    img={project.preview}
+                                    tech={project.extras}
+                                    repo={project.repoLink}
+                                    deployed={project.deployLink}
+                                    flowModal={this.flowChartModal}
+                                    downloadable={project.dlFile}
+                                    index={i}
+                                    />
+                                )
+                            })): null}
+                            
                         </div>
-                    </Col>
-                    <Education className="col-3 mb-2" showResumes={this.showDownloads} showDLoptions={this.showDLoptions}/>
-                    <Col sm="4">
-                        <SkillTable style={styles.skillForm} />
-                    </Col>
-
-                    <TextCard
-                        style={styles.proCard}
-                        titleStyle={{fontSize: "2.5em"}}
-                        className="col-md-4 mx-auto"
-                        title="Projects"
-                        subtitle="Choose a option to filter types of projects">
-                            <ProjectSelect handleRadioSelect={this.handleRadioSelect}/>
-                    </TextCard>
+                    </Element>
                </Row>
-
-               <Row className="mt-3" style={styles.row}>
-
-                    <div className="mx-auto">
-                        {this.state.projectsShown.length ? (
-                            <Button style={styles.closeBtn} onClick={() => this.setState({ projectsShown: [] })}>
-                                Close Projects
-                            </Button>
-                        ): null}
-
-                        {this.state.projectsShown.length ? (this.state.projectsShown.map((project,i) =>{
-                            return(
-                                <ProjectDisplay
-                                key={i}
-                                title={project.name}
-                                subtitle={project.description}
-                                img={project.preview}
-                                tech={project.extras}
-                                repo={project.repoLink}
-                                deployed={project.deployLink}
-                                flowCharts={project.codeFlows}
-                                flowModal={this.flowChartModal}
-                                downloadable={project.dlFile}
-                                index={i}
-                                />
-                            )
-                        })): null}
-                    </div>
-                    
-               </Row>
-                
-                
             </div>
         );
     }
@@ -161,9 +178,9 @@ class Home extends Component{
 
 const styles = {
     page: {
-        paddingTop: "5rem",
+        paddingTop: "3rem",
         margin: "10px",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     sweetBox:{ 
         maxHeight: "50vh", 
@@ -210,6 +227,12 @@ const styles = {
         fontFamily: fonts.primary,
         color: colors.darkGrey,
         textShadow: shadows.text2
+    },
+    toTop:{
+        position:"sticky", 
+        top:0, 
+        height:"fit-content", 
+        zIndex:1000
     }
 }
 

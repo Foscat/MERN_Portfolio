@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-const front = ["HTML","CSS","Javascript", "jQuery", "React.js", "Bootstrap"];
-const back = ["Node.js", "Express.js", "MongoDB", "Mongoose","JsonWebToken", "Bcrypt"];
+const skills = [ ["HTML", "Node.js"], ["CSS","Express.js"], ["jQuery","MongoDB"],["React.js","Mongoose"],["Bootstrap","JsonWebToken"],["","bCrypt"]];
 const { colors, fonts, shadows } = require("../../../utils/CSS");
 
 const SkillTable = props => {
@@ -21,24 +20,14 @@ const SkillTable = props => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <ul style={{listStyle:"none"}}>
-                            {front.length ? front.map((skill,i) =>{
-                                return <li key={i} style={styles.item}><h6>{skill}</h6></li>
-                            }) : null }
-                        </ul>
-                    </td>
-
-                    <td>
-                        <ul style={{listStyle:"none"}}>
-                            {back.length ? back.map((skill,i) =>{
-                                return <li key={i} style={styles.item} ><h6>{skill}</h6></li>
-                            }) : null }
-                        </ul>
-                    </td>
-
-                </tr>
+                {skills.length ? skills.map((set,i)=> {
+                    return(
+                        <tr key={i} style={styles.sub}>
+                            <td>{set[0]}</td>
+                            <td>{set[1]}</td>
+                        </tr>
+                    )
+                }):null}
             </tbody>
         </Table>
     )
@@ -52,7 +41,6 @@ const styles = {
         textShadow: shadows.text2
     },
     sub:{
-        paddingLeft: "5%",
         color: colors.darkGrey,
         fontFamily: fonts.secondary,
         borderColor: colors.darkGrey

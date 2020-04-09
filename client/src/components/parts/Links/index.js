@@ -57,6 +57,7 @@ const styles = {
     btnStyle:{
         boxShadow: shadows.div2,
         backgroundColor: colors.accent,
-        border: "none"
+        border: "none",
+        margin: 5
     }
 }

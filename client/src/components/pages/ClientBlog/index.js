@@ -38,6 +38,16 @@ class ClientBlog extends Component {
         });
     }
 
+    shorten = blogString => {
+        console.log(blogString)
+        if(blogString.length > 65){
+            let short = blogString.slice(0,65);
+            short+="...";
+            return short;
+        }
+        else return blogString;
+    }
+
     render() {
         return (
             <div style={styles.page}>
@@ -47,7 +57,7 @@ class ClientBlog extends Component {
                     onConfirm={() => this.setState({ show: false })}
                     confirmBtnText="Close"
                     confirmBtnStyle={{backgroundColor:colors.accent,color:colors.light}}
-                    className="col-10 card mx-auto"
+                    className="col-10 mx-auto"
                 >
                     <div style={styles.sweetBox}>
                         {this.state.text}
@@ -55,19 +65,27 @@ class ClientBlog extends Component {
                 </SweetAlert>
 
                 <Row>
-                <FlexTron
-                    style={{backgroundColor: colors.light}}
-                    className="col-11 mx-auto"
-                    title="Welcome to my blog!"
-                    subtitle="This is where I post my thoughts on tech and business."/>
+                    <FlexTron
+                        style={{backgroundColor: colors.light}}
+                        className="col-11 mx-auto"
+                        title="Welcome to my blog!"
+                        subtitle="This is where I post my thoughts on tech and business.">
+                            <p>Click on a card to see the post.</p>
+                    </FlexTron>
+
                     {this.state.postPool.length ? this.state.postPool.map((post,i) => {
                         return(
                             <TextCard
                                 style={{backgroundColor: colors.light}}
+                                onClick={()=>this.setState({ 
+                                    title: post.title, 
+                                    text:<p>{post.body}</p>,
+                                    show: true
+                                })}
                                 className="col-8 mx-auto"
                                 key={i}
                                 subtitle={post.title}>
-                                    <p> {post.body} </p>
+                                    <p> {this.shorten(post.body)} </p>
                             </TextCard>
                         )
                     }) : null}
