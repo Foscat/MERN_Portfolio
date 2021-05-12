@@ -29,7 +29,7 @@
     "if-env": "^1.0.4",
     "moment": "^2.24.0",
     "mongoose": "^5.8.11",
-    "nodemailer": "^6.4.2",
+    "nodemailer": "^6.4.16",
     "prop-types": "^15.7.2",
     "react": "^16.12.0"
   },
